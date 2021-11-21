@@ -2,17 +2,17 @@ package zooAnimales;
 
 import java.util.ArrayList;
 
-public class Mamifero extends Animal{
-    static ArrayList<Mamifero> listado = new ArrayList<>();
-    int caballos;
-    int leones;
-    boolean pelaje;
-    int patas;
+public class Mamifero extends Animal {
+    private static ArrayList<Mamifero> listado = new ArrayList<>();
+    public static int caballos;
+    public static int leones;
+    private boolean pelaje;
+    private int patas;
 
     //constructor
 
-    public Mamifero(){
-        this(null,-1,null,null,false,-1);
+    public Mamifero() {
+        this(null, -1, null, null, false, -1);
     }
 
     public Mamifero(String nombre, int edad, String habitat, String genero, boolean pelaje, int patas) {
@@ -26,21 +26,6 @@ public class Mamifero extends Animal{
 
     //fin constructor
 
-    public int getCaballos() {
-        return caballos;
-    }
-
-    public void setCaballos(int caballos) {
-        this.caballos = caballos;
-    }
-
-    public int getLeones() {
-        return leones;
-    }
-
-    public void setLeones(int leones) {
-        this.leones = leones;
-    }
 
     public boolean isPelaje() {
         return pelaje;
@@ -63,29 +48,31 @@ public class Mamifero extends Animal{
 
     //fin getter and setter
 
-    public int cantidadMamiferos(){
+    public int cantidadMamiferos() {
         return listado.size();
     }
 
-    public Mamifero crearCaballo(String nombre,int edad,String genero){
-        caballos ++;
+    public static Mamifero crearCaballo(String nombre, int edad, String genero) {
+        caballos++;
 
-        Boolean pelaje = true;
+        boolean pelaje = true;
         int patas = 4;
         String habitat = "pradera";
 
-        Mamifero caballo = new Mamifero(nombre,edad,habitat,genero, pelaje,patas);
+        Mamifero caballo = new Mamifero(nombre, edad, habitat, genero, pelaje, patas);
+        listado.add(caballo);
         return caballo;
     }
 
-    public Mamifero crearLeon(String nombre,int edad,String genero){
-        leones ++;
+    public static Mamifero crearLeon(String nombre, int edad, String genero) {
+        leones++;
 
-        Boolean pelaje = true;
+        boolean pelaje = true;
         int patas = 4;
         String habitat = "selva";
 
-        Mamifero leon = new Mamifero(nombre,edad,habitat,genero,pelaje,patas);
+        Mamifero leon = new Mamifero(nombre, edad, habitat, genero, pelaje, patas);
+        listado.add(leon);
         return leon;
     }
 }

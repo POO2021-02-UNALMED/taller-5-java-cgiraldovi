@@ -10,13 +10,13 @@ public class Animal {
     private int edad;
     private String habitat;
     private String genero;
-    private ArrayList<Zona> zona;
+    private Zona zona;
 
 
     //constructor
 
-    public Animal(){
-        this(null,0,null,null);
+    public Animal() {
+        this(null, 0, null, null);
     }
 
     public Animal(String nombre, int edad, String habitat, String genero) {
@@ -25,7 +25,7 @@ public class Animal {
         this.habitat = habitat;
         this.genero = genero;
 
-        totalAnimales ++;
+        totalAnimales++;
     }
 
     //fin constructor
@@ -68,11 +68,11 @@ public class Animal {
     //fin getter and setter
 
 
-    public String movimiento(){
+    public String movimiento() {
         return "“desplazarse";
     }
 
-    public String totalPorTipo(){
+    public static String totalPorTipo() {
         int contadorMamiferos = 0;
         int contadorAves = 0;
         int contadorReptiles = 0;
@@ -90,20 +90,19 @@ public class Animal {
         String habitatAnimal = habitat;
         String generoAnimal = genero;
         String zonaAnimal;
+        String nombreZoo;
 
-        if(zona.size() != 0){
-            zonaAnimal = zona.get(0).getNombre();
-            String nombreZoo = zona.get(0).getNombre();
+        if (zona != null) {
+            zonaAnimal = zona.getNombre();
+            nombreZoo = zona.getZoo().getNombre();
 
-            return "Mi nombre es #"+nombreAnimal+", tengo una edad de #"+edadAnimal+", habito en #"+
-                    habitatAnimal+" y mi genero es#"+generoAnimal+", la zona en la que me ubico es #"+
-                    zonaAnimal+", en el #"+nombreZoo;
-
-        } else{
-            return "Mi nombre es #"+nombreAnimal+", tengo una edad de #"+edadAnimal+
-                    ", habito en #"+habitatAnimal+" y mi genero es#"+generoAnimal;
+            return "Mi nombre es #" + nombreAnimal + ", tengo una edad de #" + edadAnimal + ", habito en #" +
+                    habitatAnimal + " y mi genero es#" + generoAnimal + ", la zona en la que me ubico es #" +
+                    zonaAnimal + ", en el #" + nombreZoo;
+        } else {
+            return "Mi nombre es #" + nombreAnimal + ", tengo una edad de #" + edadAnimal +
+                    ", habito en #" + habitatAnimal + " y mi genero es#" + generoAnimal;
         }
-
 
 
     }

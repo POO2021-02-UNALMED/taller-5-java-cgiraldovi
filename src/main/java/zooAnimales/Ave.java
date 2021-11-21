@@ -3,10 +3,10 @@ package zooAnimales;
 import java.util.ArrayList;
 
 public class Ave extends Animal{
-    ArrayList<Ave> listado = new ArrayList<>();
-    public int halcones;
-    public int aguilas;
-    String colorPlumas;
+    private static ArrayList<Ave> listado = new ArrayList<>();
+    public static int halcones;
+    public static int aguilas;
+    private String colorPlumas;
 
     //constructor
     public Ave(){
@@ -46,21 +46,23 @@ public class Ave extends Animal{
         return "volar";
     }
 
-    public Ave crearHalcon(String nombre,int edad,String genero){
+    public static Ave crearHalcon(String nombre,int edad,String genero){
         halcones ++;
         String colorPlumas = "cafe glorioso";
         String habitat = "montanas";
         Ave halcon = new Ave(nombre,edad,habitat,genero,colorPlumas);
+        listado.add(halcon);
         return halcon;
     }
 
-    public Ave crearAguila(String nombre,int edad,String genero){
+    public static Ave crearAguila(String nombre,int edad,String genero){
         aguilas ++;
 
         String colorPlumas = "blanco y amarillo";
         String habitat = "montanas";
 
         Ave aguila = new Ave(nombre,edad,habitat,genero,colorPlumas);
+        listado.add(aguila);
         return aguila;
     }
 }

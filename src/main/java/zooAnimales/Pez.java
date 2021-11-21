@@ -3,11 +3,11 @@ package zooAnimales;
 import java.util.ArrayList;
 
 public class Pez extends Animal{
-    ArrayList<Pez> listado = new ArrayList<>();
-    int salmones;
-    int bacalaos;
-    String colorEscamas;
-    int cantidadAletas;
+    private static ArrayList<Pez> listado = new ArrayList<>();
+    public static int salmones;
+    public static int bacalaos;
+    private String colorEscamas;
+    private int cantidadAletas;
 
     //constructor
     public Pez(){
@@ -56,22 +56,24 @@ public class Pez extends Animal{
         return "nadar";
     }
 
-    public Pez crearSalmon(String nombre,int edad,String genero){
+    public static Pez crearSalmon(String nombre,int edad,String genero){
         salmones ++;
         String colorEscamas = "rojo";
         int cantidadAletas = 6;
         String habitat = "oceano";
         Pez salmon = new Pez(nombre,edad,habitat,genero,colorEscamas,cantidadAletas);
+        listado.add(salmon);
         return salmon;
     }
 
-    public Pez crearBacalao(String nombre,int edad,String genero){
+    public static Pez crearBacalao(String nombre,int edad,String genero){
         salmones ++;
         String colorEscamas = "gris";
         int cantidadAletas = 6;
         String habitat = "oceano";
 
         Pez bacalao = new Pez(nombre,edad,habitat,genero,colorEscamas,cantidadAletas);
+        listado.add(bacalao);
         return bacalao;
     }
 

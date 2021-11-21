@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Zona {
     private String nombre;
-    private ArrayList<Zoologico> zoo;
+    private Zoologico zoo;
     private ArrayList<Animal> animales;
 
 
@@ -18,10 +18,7 @@ public class Zona {
 
     public Zona(String nombre, Zoologico zoologico) {
         this.nombre = nombre;
-
-        ArrayList<Zoologico> zoologicos1 = new ArrayList<Zoologico>();
-        zoologicos1.add(zoologico);
-        this.zoo = zoologicos1;
+        this.zoo = zoologico;
     }
 
     //fin constructor
@@ -30,21 +27,22 @@ public class Zona {
 
 
     //getter y setter
+
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-
     }
 
-    public Zoologico getZoo(){
-        return zoo.get(0);
+    public Zoologico getZoo() {
+        return zoo;
     }
 
-
-
+    public void setZoo(Zoologico zoo) {
+        this.zoo = zoo;
+    }
 
 
     //fin getter y setter

@@ -67,7 +67,7 @@ public class Pez extends Animal{
     }
 
     public static Pez crearBacalao(String nombre,int edad,String genero){
-        salmones ++;
+        bacalaos ++;
         String colorEscamas = "gris";
         int cantidadAletas = 6;
         String habitat = "oceano";

@@ -19,8 +19,8 @@ public class Reptil extends Animal{
         super(nombre, edad, habitat, genero);
         this.colorEscamas = colorEscamas;
         this.largoCola = largoCola;
-
         listado.add(this);
+        setTotalReptiles(1);
     }
 
     //fin constructor

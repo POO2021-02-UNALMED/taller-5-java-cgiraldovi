@@ -6,6 +6,57 @@ import java.util.ArrayList;
 
 public class Animal {
     private int totalAnimales;
+    private static int totalMamiferos;
+    private static int totalAves;
+    private static int totalReptiles;
+    private static int totalPeces;
+    private static int totalAnfibios;
+
+    //gett sett contadores
+
+    public static int getTotalMamiferos() {
+        return totalMamiferos;
+    }
+
+    public static void setTotalMamiferos(int totalMamiferos) {
+        Animal.totalMamiferos = Animal.totalMamiferos + totalMamiferos;
+    }
+
+    public static int getTotalAves() {
+        return totalAves;
+    }
+
+    public static void setTotalAves(int totalAves) {
+        Animal.totalAves = Animal.totalAves + totalAves;
+    }
+
+    public static int getTotalReptiles() {
+        return totalReptiles;
+    }
+
+    public static void setTotalReptiles(int totalReptiles) {
+        Animal.totalReptiles = Animal.totalReptiles + totalReptiles;
+    }
+
+    public static int getTotalPeces() {
+        return totalPeces;
+    }
+
+    public static void setTotalPeces(int totalPeces) {
+        Animal.totalPeces = Animal.totalPeces + totalPeces;
+    }
+
+    public static int getTotalAnfibios() {
+        return totalAnfibios;
+    }
+
+    public static void setTotalAnfibios(int totalAnfibios) {
+        Animal.totalAnfibios = Animal.totalAnfibios + totalAnfibios;
+    }
+
+
+    //fin get sett contadores
+
     private String nombre;
     private int edad;
     private String habitat;
@@ -73,13 +124,13 @@ public class Animal {
     }
 
     public static String totalPorTipo() {
-        int contadorMamiferos = 0;
-        int contadorAves = 0;
-        int contadorReptiles = 0;
-        int contadorPeces = 0;
-        int contadorAnfibios = 0;
-        return "hola";
-        //no se como acceder a las zonas de los demas animales
+
+        return "Mamiferos: "+getTotalMamiferos()+"\n" +
+                "Aves: "+getTotalAves()+"\n" +
+                "Reptiles: "+getTotalReptiles()+"\n" +
+                "Peces: "+getTotalPeces()+"\n" +
+                "Anfibios: "+getTotalAnfibios();
+
 
     }
 
